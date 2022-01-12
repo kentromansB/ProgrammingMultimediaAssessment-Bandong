@@ -1,0 +1,8 @@
+1. Download Xampp
+2. Install Xampp
+3. Turn on Apache and MySQL in xampp
+4. Press the admin button on the MySQL row.
+5. Create new table and name it love
+6. Press import in the navigation above
+7. Select the included sql file inside the love folder named "love"
+8. Open a browser and input "http://localhost/love/index.php"
