@@ -1,22 +1,12 @@
 <?php 
 session_start();
-$admin_username = $_SESSION['admin_username'];
+$username = $_SESSION['username'];
 error_reporting(0);
 require_once('db.php');
-
-if(!$_SESSION['admin_username']){
-  exit(header('Location: admin_login.php'));
+if(!$_SESSION['username']){
+  exit(header('Location: login.php'));
 }
 
-$query = "SELECT * FROM   admin WHERE  admin_username='$admin_username'";
-            $result = mysqli_query($db,$query) or die(mysqli_error($db));
-
-              while($row = mysqli_fetch_array($result))
-              {
-                $zz= $row['user_id'];
-                $i= $row['admin_username'];
-                $a=$row['admin_password'];
-              }
               
 ?>
 <!DOCTYPE html>
@@ -54,7 +44,8 @@ $query = "SELECT * FROM   admin WHERE  admin_username='$admin_username'";
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="logout.php">Logout</a>
-          </li>
+    </li>
+        </ul>
       </div>
     </nav>
 
@@ -68,42 +59,48 @@ $query = "SELECT * FROM   admin WHERE  admin_username='$admin_username'";
 
           <ul class="nav nav-pills flex-column">
             <br />
-
             <li class="nav-item">
-              <a class="nav-link active" href="admin_main.php">Online Form</a>
-            </li>
-          
-            <li class="nav-item">
-              <a class="nav-link" href="applicants.php">Applicants List</a>
+              <a class="nav-link" href="main.php">Online Form</a>
             </li>
             <li class="nav-item">
               <a
                 class="nav-link"
-                href="#"
+                href="edit_user_profile.php"
                 >Edit Profile</a
               >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="index_login.php">Start-up Love</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services_login.php">Services Offered</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts_login.php">Contact Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="technology_login.php">Technology Stack</a>
             </li>
           </ul>
           <hr class="d-sm-none" />
         </div>
         <div class="col-sm-8">
-          <h2>Edit Admin Credentials</h2>
-          <form method="POST" action="edit_user.php">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="name" class="form-control" name="username" value="<?php echo $i ?>"  >
-  </div>
-  <div class="form-group">
-    
-    <input type="name" class="form-control" name="user_id" value="<?php echo $zz ?>" hidden >
-  </div>
-  <div class="form-group">
-      <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" name="password" placeholder="Password" value="<?php echo $a ?>">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+          <h2>Startup LOVE</h2>
+          <h5>January 12, 2022</h5>
+          <div class="fakeimg"><image src="assets/Banner.jpg"></image></div>
+          <br />
+          <p>
+            Start-up LOVE, an acronym that stands for Licensing Of Vehicle for
+            Everyone, was created aimed at addressing the growing demand for
+            getting a driver's license.
+          </p>
+          <p>
+            Seeing the value of transporting privately during the pandemic, many
+            people have become eager to learn how to drive and eventually get a
+            license for it. Being able to do so lessens their exposure to people
+            which is key in stemming the transmission of the virus.
+          </p>
+          <br />
         </div>
       </div>
     </div>

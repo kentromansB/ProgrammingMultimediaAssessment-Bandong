@@ -20,8 +20,8 @@ if(isset($_POST['submit'])){
      header('location:applicants.php');       
 }
 else{
-    echo "<script> window.alert('Invalid Login Credentials'); </script>";
-}
+    echo "<script> window.alert('Invalid Login Credentials'); </script>"; 
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -89,13 +89,6 @@ else{
             </li>
             <li class="nav-item">
               <a class="nav-link" href="technology.php">Technology Stack</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="https://lto.gov.ph/lto-forms/file/1162-application-for-student-driver-s-permit-driver-s-license-conductor-s-license-apl.html"
-                >Online Form</a
-              >
             </li>
           </ul>
           <hr class="d-sm-none" />

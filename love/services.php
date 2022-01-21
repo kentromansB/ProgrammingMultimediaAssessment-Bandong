@@ -72,7 +72,9 @@
         </div>
         <div class="col-sm-8">
           <h2>Services Offered</h2>
-          <div class="fakeimg"><image src="assets/Banner.jpg"></image></div>
+          <video width="700" height="360" controls>
+        <source src="assets/LOVE.mp4" type="video/mp4">
+        </video>
           <br />
           <h5>
           ● Student Permit <br>

@@ -19,6 +19,9 @@ $query = "SELECT * FROM   user WHERE  username='$username'";
                 $e=$row['email'];
               }
               
+              if(!$_SESSION['username']){
+                exit(header('Location: login.php'));
+              }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,23 +74,26 @@ $query = "SELECT * FROM   user WHERE  username='$username'";
             <br />
 
             <li class="nav-item">
-              <a class="nav-link active" href="main.php">Edit Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.php">Services Offered</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contacts.php">Contact Information</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="technology.php">Technology Stack</a>
-            </li>
+              <a class="nav-link" href="main.php">Online Form</a>
+    </li>
             <li class="nav-item">
               <a
-                class="nav-link"
-                href="#"
-                >Online Form</a
+                class="nav-link active"
+                href="edit_user_profile.php"
+                >Edit Profile</a
               >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index_login.php">Start-up Love</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services_login.php">Services Offered</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacts_login.php">Contact Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="technology_login.php">Technology Stack</a>
             </li>
           </ul>
           <hr class="d-sm-none" />

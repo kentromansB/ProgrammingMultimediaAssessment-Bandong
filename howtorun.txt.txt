@@ -6,3 +6,8 @@
 6. Press import in the navigation above
 7. Select the included sql file inside the love folder named "love"
 8. Open a browser and input "http://localhost/love/index.php"
+
+
+Admin Credentials:
+user: admin
+pass: admin

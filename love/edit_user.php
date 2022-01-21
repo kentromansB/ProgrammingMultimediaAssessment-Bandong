@@ -13,7 +13,7 @@
 		mysqli_select_db($db,'love') or die(mysqli_error($db));
 
 		$query = mysqli_query($db,"UPDATE user SET firstname='$firstname', lastname='$lastname', 
-         email='$email',  username='$username',  user_password='$password' WHERE   id='$zz'");
+         email='$email',  username='$username',  user_password='$password' WHERE  user_id='$zz'");
 
 
 ?>

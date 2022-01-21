@@ -3,6 +3,10 @@ session_start();
 $admin_username = $_SESSION['admin_username'];
 error_reporting(0);
 require_once('db.php');
+if(!$_SESSION['admin_username']){
+  exit(header('Location: admin_login.php'));
+}
+
 
 $query = "SELECT * FROM   admin WHERE  admin_username='$admin_username'";
             $result = mysqli_query($db,$query) or die(mysqli_error($db));
@@ -28,6 +32,9 @@ $query = "SELECT * FROM   admin WHERE  admin_username='$admin_username'";
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="js/datatables-demo.js"></script>
     <style>
       .img {
         height: 200px;
@@ -68,17 +75,7 @@ $query = "SELECT * FROM   admin WHERE  admin_username='$admin_username'";
             <li class="nav-item">
               <a class="nav-link active" href="applicants.php">Applicants List</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="guests.php">Guest List</a>
-            </li>
-            
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                >Edit Profile</a
-              >
-            </li>
+          
           </ul>
           <hr class="d-sm-none" />
         </div>
@@ -88,18 +85,25 @@ $query = "SELECT * FROM   admin WHERE  admin_username='$admin_username'";
         <div class="row">
           <div class="col-md-12">
             <div class="card">
+             <center> <div class="fakeimg"><image src="assets/legend.png"></image></div></center>
               <div class="card-header">
                 <h4 class="card-title"> Applicant List</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                <table class="table">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead class=" text-primary">
                       <th>
                         Applicant Name
                       </th> 
+                       <th>
+                        Status
+                      </th>
+                       <th>
+                        TOA
+                      </th>
                       <th>
-                        
+                        Actions
                       </th>
                     </thead>
                     <tbody>
@@ -131,6 +135,64 @@ $query = "SELECT * FROM   admin WHERE  admin_username='$admin_username'";
           
           echo '<tr>';
           echo ' <td>'. $row['applicant_name'].'</td>';
+          if($row['app_status'] == 0 ){
+          echo ' <td> Pending </td>';
+          }
+          else if($row['app_status'] == 1){
+            echo ' <td> Approved </td>';
+          }
+          else{
+            echo ' <td> Declined </td>';
+          }
+          if($row['applicant_toa'] == "New"){
+            echo ' <td> A </td>';
+          }
+          else if($row['applicant_toa'] == "Renewal"){
+            echo ' <td> B </td>';
+          }
+          else if($row['applicant_toa'] == "Conversion of Foreign DL"){
+            echo ' <td> C </td>';
+          }
+          else if($row['applicant_toa'] == "Additional Code or Category"){
+            echo ' <td> D </td>';
+          }
+          else if($row['applicant_toa'] == "Change of DL Classification"){
+            echo ' <td> E </td>';
+          }
+          else if($row['applicant_toa'] == "Expired DL with Valid DL"){
+            echo ' <td> F </td>';
+          }
+          else if($row['applicant_toa'] == "Duplicate"){
+            echo ' <td> G </td>';
+          }
+          else if($row['applicant_toa'] == "DROP/ADD Category or Removal of Driving Condition"){
+            echo ' <td> H </td>';
+          }
+          else if($row['applicant_toa'] == "Change Address"){
+            echo ' <td> I1 </td>';
+          }
+          else if($row['applicant_toa'] == "Change Civil Status"){
+            echo ' <td> I2 </td>';
+          }
+          else if($row['applicant_toa'] == "Change Name"){
+            echo ' <td> I3 </td>';
+          }
+          else if($row['applicant_toa'] == "Change Birth Date"){
+            echo ' <td> I4 </td>';
+          }
+          else if($row['applicant_toa'] == "Others"){
+            echo ' <td> I5 </td>';
+          }
+          else if($row['applicant_toa'] == "Others"){
+            echo ' <td> I5 </td>';
+          }
+          else if($row['applicant_toa'] == "Enhancement of DL"){
+            echo ' <td> J </td>';
+          }
+          else if($row['applicant_toa'] == "Change of Clutch Type"){
+            echo ' <td> K </td>';
+          }
+          echo '<td><a  type="button" class="btn btn-xs btn-info" href="view_applicant.php?action=edit & applicant_id='.$row['applicant_id'] . '"> VIEW </a></td>';
 
     
             

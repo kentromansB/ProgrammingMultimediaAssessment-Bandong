@@ -1,0 +1,15 @@
+1 NEW
+2 renewal
+3 conversion of foreign DL
+4 Additional code
+5change of DL classification
+6 Expired Dl with Valid DFDL
+7 Duplicate
+8 dropping of category
+9 Change address
+10Change civil status
+11 Change name
+12 Change Birthdate
+13 Others
+14 Enhancement of DL
+15 Change of Clutch type

@@ -38,7 +38,7 @@
             <a class="nav-link" href="login.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.php">Admin Login</a>
+            <a class="nav-link" href="admin_login.php">Admin Login</a>
           </li>
         </ul>
       </div>
@@ -72,12 +72,14 @@
         </div>
         <div class="col-sm-8">
           <h2>Contact Us</h2>
-          <div class="fakeimg"><image src="assets/Banner.jpg"></image></div>
+          <div class="fakeimg"><image src="assets/ecoland.png"></image></div>
           <br />
-          <h4> Via Email</h4>
-          <h3> ltomailbox@lto.gov.ph </h3>
-          <h4> Via Phone</h4>
-          <h3> 89229061 to 63 </h3>
+          <h5> Location: Quezon Blvd, Poblacion District, Davao City, 8000 Davao del Sur</h5>
+          <h5> Map : <a href="https://www.google.com/search?q=lto%20davao&sa=X&ved=2ahUKEwiDiv_59sH1AhWSNaYKHR79BocQvS56BAgSECE&biw=1920&bih=937&dpr=1&tbs=lf:1,lf_ui:4&tbm=lcl&rflfq=1&num=10&rldimm=10455096938269248773&lqi=CglsdG8gZGF2YW8iA4gBAUil4tXL5YCAgAhaFRAAGAEiCWx0byBkYXZhbyoECAIQAJIBEWdvdmVybm1lbnRfb2ZmaWNlqgELEAEqByIDbHRvKAA&rlst=f#rlfi=hd:;si:10455096938269248773,l,CglsdG8gZGF2YW8iA4gBAUil4tXL5YCAgAhaFRAAGAEiCWx0byBkYXZhbyoECAIQAJIBEWdvdmVybm1lbnRfb2ZmaWNlqgELEAEqByIDbHRvKAA;mv:[[7.067126522050358,125.62112311954091],[7.050473804759371,125.5889366113622],null,[7.058800238320229,125.60502986545156],16]" target="_blank"> Link </a></h5>
+          <h5> Via Email</h4>
+          <h6> ltomailbox@lto.gov.ph </h3>
+          <h5> Via Phone</h4>
+          <h6> (082) 226 4141 </h3>
           
           <br />
         </div>
